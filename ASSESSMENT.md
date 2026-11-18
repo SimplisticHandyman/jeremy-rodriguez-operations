@@ -115,3 +115,10 @@ Recommended host: **Cloudflare Pages** (static, free, honors `site/_headers`). G
 6. **Optional:** submit the sitemap in Google Search Console, and update the LinkedIn "featured" link if it points anywhere else.
 
 Do not touch any Render services (organic-blends, sugarhill-hardware-pos, jeremy-os-cloud, simplistic-handyman-crm) for this.
+
+## 8. Preview pass (2026-11-18): Projects + resume preview
+
+- **Site:** new `#projects` section (nav: "Projects") holds **Organic Blends Barbershop** (Live; walk-in check-in, live SMS queue updates, owner/barber views, duplicate check-in protection, English/Spanish check-in as a product feature) and **Ramydia Home Health Care** (Dry run, not in production; wording verbatim from `RAMYDIA_FACTS.md`). Paid roles remain in the experience section. Ramydia sources (not shown publicly): `/Users/jeremy/Documents/ChatGPT/Ramydia/README.md`, `docs/phase-2-status.md` (2026-08-15, production form generation stopped / not enabled), last commit `76e2443`, all as recorded in `RAMYDIA_FACTS.md`. I did not open these myself; they are on the other Mac.
+- **Resume preview:** `preview/Resume_PREVIEW.pdf` (1 page) and `preview/Resume_PREVIEW.png`, built from copies `preview/build/common_preview.py` and `preview/build/build_preview.py` (system Python plus the ReportLab already in the user site-packages). The exact PROJECTS line is in `preview/PROJECTS_LINE.txt`. `resume/Jeremy_Rodriguez_Resume_LATEST.pdf` and `site/Jeremy_Rodriguez_Resume.pdf` are **unchanged**.
+- **Screenshots:** `screenshots/preview-projects-1440.png`, `screenshots/preview-projects-390.png` (via `tools/section-shot.cjs`); `after-*.png` refreshed.
+- **Pending Jeremy:** approve the resume preview, then replace the site's resume PDF; then deploy per section 7.

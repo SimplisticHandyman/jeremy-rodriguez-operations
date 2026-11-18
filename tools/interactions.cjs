@@ -13,7 +13,8 @@ const url = process.argv[2]; const ok = (c, m) => { console.log((c ? 'PASS ' : '
   const vis = await p.$$eval('.items li', l => l.filter(x => !x.hidden).length); const biz = await p.$$eval('[data-biz]', l => l.filter(x => !x.hidden).length);
   ok(vis === 3 && biz === 2, `Selling filter shows 3 items across 2 businesses (got ${vis}/${biz})`);
   ok((await p.textContent('[data-filter-status]')).includes('3 selling'), 'filter status announced');
-  await p.click('[data-filter="all"]'); ok((await p.$$eval('.items li', l => l.filter(x => !x.hidden).length)) === 15, 'All restores 15 items');
+  await p.click('[data-filter="all"]'); ok((await p.$$eval('.items li', l => l.filter(x => !x.hidden).length)) === 12, 'All restores 12 job items');
+  ok((await p.$$eval('#projects .proj', l => l.length)) === 2 && (await p.$$eval('#projects [data-biz]', l => l.length)) === 0, 'Projects section holds 2 projects, separate from jobs');
   await p.click('[data-copy]'); await p.waitForTimeout(1000); const ct = await p.textContent('[data-copy]'); console.log('  copy label:', ct); ok(ct === 'Copied', 'copy email button gives feedback');
   await p.evaluate(() => scrollTo(0, 1600)); await p.waitForTimeout(600); ok(await p.$eval('[data-dock]', d => d.classList.contains('show')), 'mobile dock appears after hero');
   await p.evaluate(() => document.getElementById('contact').scrollIntoView()); await p.waitForTimeout(600); ok(!(await p.$eval('[data-dock]', d => d.classList.contains('show'))), 'dock hides at contact section');

@@ -62,3 +62,31 @@ Local-server numbers flatter speed. Re-measure on the real host after deploy.
 - **Credibility A-:** Organic Blends is real and verified locally, but it is not on the resume. To reach A, either add it to the resume (then the site and resume match 1:1) or remove it from the site. Jeremy's call.
 - **Design A-:** a custom display font and real product screenshots (sanitized Simplistic CRM / Sugar Hill POS screens) would push it further, but real screens could expose customer data. Only add them after a manual scrub that Jeremy approves.
 - **Overall A-:** follows from the two items above.
+
+---
+
+# PREVIEW: Projects section added (local site, branch `redesign/2026-11-18`)
+
+Graded 2026-11-18 (America/New_York) against the local build at `http://127.0.0.1:4173/`, using the same rubric and the same SDR/BDR hiring-manager point of view. **Preview only. Nothing is deployed, and the live site is unchanged.**
+
+## What changed since AFTER
+- Organic Blends moved out of the job list into a new **Projects** section (nav link added), next to a new **Ramydia Home Health Care** project block. Paid roles (Simplistic, Sugar Hill, McCabe) stay in "What I did at each business".
+- Ramydia wording comes only from `RAMYDIA_FACTS.md`, with no metrics, no patient or visit data, no internal controls, no vendor or tool names. Status pill: "Dry run, not in production".
+- Organic Blends adds "Customers get live SMS queue updates" (verified 2026-11-18 per `RAMYDIA_FACTS.md`). Status pill: "Live". No phone number or vendor. English/Spanish is still described as a product feature.
+- **Resume preview** (`preview/Resume_PREVIEW.pdf`, 1 page) now carries a PROJECTS line listing both, so the site and the *preview* resume match 1:1.
+- Checks: 13/13 interaction checks pass (new: Projects holds 2 projects and none are counted as jobs). Zero console errors, zero failed requests, zero em/en dashes, zero hits for ChatGPT/Codex/bilingual/quota/vendor/patient terms. Page height is 4,462px at 1440 and 7,330px at 390; transfer is about 50KB.
+
+## Grades
+| Category | BEFORE | AFTER | PREVIEW | One-line reason (PREVIEW) |
+|---|---|---|---|---|
+| **Overall recruitability (SDR/BDR)** | **D+** | **A-** | **A-** | It is stronger and honest, but the resume a recruiter downloads from the site is still the old one without Projects until Jeremy approves the preview. |
+| Credibility / trustworthiness | D | A- | A- | Every claim now has a home on the preview resume, and both projects are labeled as projects with honest status (Live / Dry run, not in production). It stays A- only because `site/Jeremy_Rodriguez_Resume.pdf` is intentionally still the pre-Projects resume. |
+| First-impression design | B- | A- | A- | The new two-card Projects layout adds rhythm without clutter. Still a deliberately restrained system-font design rather than a showpiece. |
+| Clarity of what he did at each business | C | A | A | Paid roles and side projects are now visibly separate, each project names what was built and its real status, and the filters still isolate selling work. |
+| Mobile (390px) | C+ | A | A | No overflow, CTA above the fold, dock works, and the Projects cards stack cleanly. The page grew to 7,330px, still under half the original 15,966px. |
+| Speed | B | A | A | About 50KB, 5 requests, no new assets, no 404s (still to be confirmed on the production host). |
+| Call to action / contact | C | A | A | Unchanged: Email Jeremy in the header, hero, dock and contact block, plus copy, call, LinkedIn and resume. |
+
+## Path to A (no new claims needed)
+- Once Jeremy approves `preview/Resume_PREVIEW.pdf`, make it the new LATEST resume and replace `site/Jeremy_Rodriguez_Resume.pdf` with it. The downloadable resume then matches the site exactly, and credibility and overall move to **A**.
+- Design stays A- unless he wants a custom display font or scrubbed real product screenshots (needs his approval for any real screens).

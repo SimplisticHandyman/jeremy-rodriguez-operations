@@ -82,7 +82,7 @@
   if (!('IntersectionObserver' in window)) return;
 
   // Reveal sections as they enter
-  const revealables = document.querySelectorAll('.proof-group, .step-body, .biz, .cell, .contact-grid');
+  const revealables = document.querySelectorAll('.proof-group, .step-body, .biz, .proj, .cell, .contact-grid');
   if (!reduce) {
     const io = new IntersectionObserver((es) => es.forEach((e) => {
       if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
