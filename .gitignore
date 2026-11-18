@@ -1,0 +1,11 @@
+# local run artifacts
+claude-run.log
+PROMPT.md
+.DS_Store
+node_modules/
+.env*
+# large review screenshots stay local (regenerate with tools/screenshot.cjs)
+screenshots/*.png
+IMPLEMENT.md
+claude-*.log
+claude-*.pid
