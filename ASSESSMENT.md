@@ -76,7 +76,7 @@ Before grades: see `./rubric.md` (Overall D+).
 | | Centralized CRM process replacing paper/spreadsheets; replacement POS and legacy inventory migration | Resume |
 | Organic Blends Barbershop (side project, 2026, Rutherford, NJ) | Designed and built a mobile-first walk-in check-in (QR, barber or first available, services, place in line); owner and barber views; duplicate check-in protection; English/Spanish check-in screen described as a product feature | `~/Documents/Codex/2026-10-23/task-2/organic-blends-live/README.md`; git history shows commits authored "Jeremy Rodriguez" (2026-10-16). **Not on resume.** No volume, revenue or SMS claims made. Live status not verified, so the site does not claim it is live. |
 | McCabe, Weisberg & Conway, LLC | Paralegal Assistant, New Rochelle, NY, Apr 2018 - Oct 2020; client/staff liaison; Excel and client systems for reporting and tracking; trained new staff | Resume |
-| Education | HVAC/R Studies, TCI College of Technology, New York, NY, 2016-2017, GPA 3.8; coursework ended when the institution closed; no degree awarded | Resume |
+| Education | HVAC/R Studies, TCI College of Technology, New York, NY, 2014-2016, GPA 3.8; coursework ended when the institution closed; no degree awarded | Resume |
 | Ramydia Home Health Care | **Omitted.** Not on the resume, and its metrics can't be verified on this machine (the `ramydia` skill points to `/Users/jeremy/...` on the other Mac). | n/a |
 
 Sample-lead text in the walkthrough ("Bathroom vanity replacement", "Follow up in 2 days") is illustrative and labeled as demo data. It is not a claim.

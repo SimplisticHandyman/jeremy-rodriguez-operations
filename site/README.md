@@ -18,7 +18,7 @@ node tools/screenshot.cjs http://127.0.0.1:4173/ screenshots after
 - AI tools: Claude Code and Claude only. Never ChatGPT or Codex.
 - $54K = approximately $54K first-year business revenue at Simplistic Handyman LLC. Never a quota.
 - Stats stay labeled by business: Simplistic (≈$54K, 5 subcontractors); Sugar Hill Hardware (20-30 labor jobs/month, 5-person team).
-- Education: HVAC/R Studies, TCI, 2016-2017; coursework ended when the institution closed; no degree awarded.
+- Education: HVAC/R Studies, TCI, 2014-2016; coursework ended when the institution closed; no degree awarded.
 - Languages: English. The Organic Blends English/Spanish check-in is a product feature, not a language skill.
 - No SaaS SDR experience implied. No street addresses. Ramydia Home Health Care is an approved project (schedule-change documentation workflow, live in production per Jeremy on 2026-11-18); keep it framed as a project, not healthcare experience or a paid job, with no invented metrics.
 - Every fact must be on the resume or verifiable in a local repo.

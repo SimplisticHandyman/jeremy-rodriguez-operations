@@ -36,7 +36,7 @@ def build(out, title_line, summary, selling, systems, shb, sug, para=None, langu
     S+=bul(para or ['Served as liaison between clients and internal staff, coordinating cross-department work to meet client deadlines and keeping status information accurate.',
        'Used Microsoft Excel and client systems for data analysis, reporting, file management, and operational tracking; trained new staff on systems and procedures.'])
     if projects: S+=sec('PROJECTS')+[Paragraph(projects,b)]
-    S+=sec('EDUCATION')+[Paragraph('<b>HVAC/R Studies | TCI College of Technology \u2022 New York, NY</b> &nbsp;&nbsp;&nbsp; 2016 - 2017',b),
+    S+=sec('EDUCATION')+[Paragraph('<b>HVAC/R Studies | TCI College of Technology \u2022 New York, NY</b> &nbsp;&nbsp;&nbsp; 2014 - 2016',b),
        Paragraph('GPA: 3.8 | Coursework ended when the institution closed and discontinued the program. No degree awarded.',b)]
     d=SimpleDocTemplate(out,pagesize=letter,leftMargin=.75*inch,rightMargin=.75*inch,topMargin=.55*inch,bottomMargin=.5*inch,title='Jeremy Rodriguez - Resume (PREVIEW)',author='Jeremy Rodriguez')
     d.build(S); print('wrote',out)
