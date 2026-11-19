@@ -20,5 +20,5 @@ node tools/screenshot.cjs http://127.0.0.1:4173/ screenshots after
 - Stats stay labeled by business: Simplistic (≈$54K, 5 subcontractors); Sugar Hill Hardware (20-30 labor jobs/month, 5-person team).
 - Education: HVAC/R Studies, TCI, 2016-2017; coursework ended when the institution closed; no degree awarded.
 - Languages: English. The Organic Blends English/Spanish check-in is a product feature, not a language skill.
-- No SaaS SDR experience implied. No street addresses. No Ramydia unless re-verified and approved.
+- No SaaS SDR experience implied. No street addresses. Ramydia Home Health Care is an approved project (schedule-change documentation workflow, live in production per Jeremy on 2026-11-18); keep it framed as a project, not healthcare experience or a paid job, with no invented metrics.
 - Every fact must be on the resume or verifiable in a local repo.
