@@ -90,19 +90,63 @@
     revealables.forEach((el) => { el.setAttribute('data-reveal', ''); io.observe(el); });
   }
 
-  // Mobile contact dock: show after the hero CTA leaves the screen, hide at the contact section
+  // Mobile contact dock. Shown only when: the hero CTAs are off screen, the
+  // contact section and footer are not on screen, and the user is scrolling up.
+  // visualViewport keeps the bar pinned to the visible bottom on iOS Safari,
+  // where position:fixed follows the layout viewport while the toolbar animates.
   const dock = document.querySelector('[data-dock]');
   const heroCta = document.querySelector('[data-hero-cta]');
   const contact = document.getElementById('contact');
+  const foot = document.querySelector('.foot');
   if (dock && heroCta && contact) {
-    let pastHero = false, atContact = false;
+    let pastHero = false, atContact = false, atFoot = false, scrollingUp = false, zoomed = false;
+    let shown = null;
     const sync = () => {
-      const show = pastHero && !atContact;
+      const show = pastHero && !atContact && !atFoot && scrollingUp && !zoomed;
+      if (show === shown) return;
+      shown = show;
       dock.classList.toggle('show', show);
       dock.setAttribute('aria-hidden', String(!show));
       dock.querySelectorAll('a').forEach((a) => (a.tabIndex = show ? 0 : -1));
     };
     new IntersectionObserver(([e]) => { pastHero = !e.isIntersecting && e.boundingClientRect.top < 0; sync(); }).observe(heroCta);
-    new IntersectionObserver(([e]) => { atContact = e.isIntersecting; sync(); }, { threshold: 0.15 }).observe(contact);
+    new IntersectionObserver(([e]) => { atContact = e.isIntersecting; sync(); }).observe(contact);
+    if (foot) new IntersectionObserver(([e]) => { atFoot = e.isIntersecting; sync(); }).observe(foot);
+
+    // Scroll direction with a small threshold; ignore iOS rubber-band overscroll.
+    const THRESHOLD = 24;
+    let anchor = window.scrollY, lastY = window.scrollY, ticking = false;
+    const onScroll = () => {
+      ticking = false;
+      const y = window.scrollY;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      if (y < 0 || y > max) return;
+      if ((y > lastY && scrollingUp) || (y < lastY && !scrollingUp)) anchor = lastY;
+      if (y - anchor > THRESHOLD) scrollingUp = false;
+      else if (anchor - y > THRESHOLD) scrollingUp = true;
+      lastY = y;
+      sync();
+    };
+    addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+
+    // Lift the bar by the gap between the layout and visual viewport bottoms.
+    const vv = window.visualViewport;
+    if (vv) {
+      const place = () => {
+        zoomed = vv.scale > 1.01;
+        const lift = Math.max(0, Math.round(window.innerHeight - vv.height - vv.offsetTop)) + 'px';
+        if (lift !== dock.style.getPropertyValue('--dock-lift')) {
+          // Track the toolbar instantly; only show/hide is animated.
+          dock.style.transition = 'none';
+          dock.style.setProperty('--dock-lift', lift);
+          void dock.offsetHeight;
+          dock.style.transition = '';
+        }
+        sync();
+      };
+      vv.addEventListener('resize', place);
+      vv.addEventListener('scroll', place);
+      place();
+    }
   }
 })();
